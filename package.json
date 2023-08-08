@@ -7,8 +7,19 @@
   },
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/hh-content-editor.umd.cjs",
+  "module": "./dist/hh-content-editor.js",
+  "exports": {
+    ".": {
+      "import": "./dist/hh-content-editor.js",
+      "require": "./dist/hh-content-editor.umd.cjs"
+    }
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
