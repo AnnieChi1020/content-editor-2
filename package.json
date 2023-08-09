@@ -1,10 +1,6 @@
 {
   "name": "hh-content-editor",
   "private": true,
-  "devEngines": {
-    "node": ">=18.16 <19",
-    "npm": ">=9.5 <10"
-  },
   "version": "0.0.0",
   "type": "module",
   "files": [
