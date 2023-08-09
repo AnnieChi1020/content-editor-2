@@ -1,7 +1,7 @@
 {
   "name": "hh-content-editor",
   "private": true,
-  "engines": {
+  "devEngines": {
     "node": ">=18.16 <19",
     "npm": ">=9.5 <10"
   },
