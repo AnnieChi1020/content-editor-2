@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import dts from 'vite-plugin-dts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,14 +17,19 @@ export default defineConfig({
         ],
       ],
     }),
+    dts({
+      insertTypesEntry: true,
+    }),
   ],
   build: {
+    sourcemap: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'lib/main.js'),
       name: 'HHContentEditor',
+      formats: ['es', 'umd'],
       // the proper extensions will be added
-      fileName: 'hh-content-editor',
+      fileName: (format) => `hh-content-editor.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

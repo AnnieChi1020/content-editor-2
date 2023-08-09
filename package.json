@@ -14,7 +14,7 @@
   "module": "./dist/hh-content-editor.js",
   "exports": {
     ".": {
-      "import": "./dist/hh-content-editor.js",
+      "import": "./dist/hh-content-editor.es.js",
       "require": "./dist/hh-content-editor.umd.cjs"
     }
   },
@@ -62,5 +62,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "vite-plugin-dts": "^3.5.1"
   }
 }
